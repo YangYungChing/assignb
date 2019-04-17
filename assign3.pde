@@ -105,6 +105,19 @@ void draw() {
 		break;
 
 		case GAME_RUN: // In-Game
+ if(downPressed) {
+      a+=1;
+       downPressed = false;
+    if(a>20){
+      a=20;
+      if(a>16){
+        groundhogY += 80;
+        downPressed = false;
+        if(groundhogY >=400) groundhogY = 400;
+        break;
+      }
+    }
+    }
 
 		// Background
 		image(bg, 0, 0);
@@ -122,15 +135,7 @@ void draw() {
 
 		
     //downPressed
-    if(downPressed) {
-      a+=1;
-    if(a>20){
-      a=20;
-    }
-    
-    
-    
-    }
+   
     // Soil - REPLACE THIS PART WITH YOUR LOOP CODE!
     for(int x=0; x<8; x++ ){
       for(int y=0; y<4; y++ ){
@@ -218,28 +223,13 @@ void draw() {
     //life
     for(int i=0;i<life;i++){
       image(lifeImage,10+i*size,10);
-      if(cabbageX<groundhogX+80 && cabbageX+80>groundhogX && cabbageY<groundhogY+80 &&cabbageY+80>groundhogY){
-         life=life+1;
-         cabbageX=800;
-         cabbageY=800;
-      }
+      
       if(life>5)life=5;
     }
     
    
     
-      if(downPressed){
-        
-      
-        groundhogY += 80;
-        downPressed = false;
-        if(groundhogY >=400) groundhogY = 400;
-        break;
-        
-  
-        
-
-      }
+     
       
       if(leftPressed){
         
