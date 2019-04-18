@@ -16,7 +16,7 @@ boolean upPressed, downPressed, rightPressed, leftPressed;
 int playerHealth = 0;
 float cameraOffsetY = 0;
 boolean debugMode = false;
-int life=2,lifesize=70;
+int life=2,lifeDistance=70;
 
 float cabbageX=floor(random(0,8))*80;
 float cabbageY=floor(random(2,6))*80;
@@ -222,7 +222,7 @@ void draw() {
     
     //life
     for(int i=0;i<life;i++){
-      image(lifeImage,10+i*lifesize,10);
+      image(lifeImage,10+i*lifeDistance,10);
       
       if(life>5)life=5;
     }
